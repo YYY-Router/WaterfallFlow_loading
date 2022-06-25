@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    /* 因为是动态加载，所以不指定具体的宽高，通过js来进行控制 */
+    margin: 0 auto;
+    height: auto;
+    position: relative;
+}
+
+.item {
+    width: 150px;
+    height: auto;
+    padding: 10px;
+    position: absolute;
+    /* 缩放加载动画 */
+    transition: all .5s ease-in-out;
+}
+
+.item .picture {
+    padding: 10px;
+    border: 1px solid #eee;
+    box-shadow: 0 0 5px #eee;
+}
+
+.item .picture img {
+    width: 100%;
+}
+
+/* 定义缩放动画 */
+.show {
+    animation: scale 1s forwards;
+}
+
+@keyframes scale {
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
